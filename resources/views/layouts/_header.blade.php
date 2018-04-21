@@ -4,8 +4,7 @@
         <ol class="carousel-indicators">
             <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
             <li data-target="#carousel-example-1z" data-slide-to="1"></li>
-            <li data-target="#carousel-example-1z" data-slide-to="2"></li>
-            <li data-target="#carousel-example-1z" data-slide-to="3"></li>
+            <li data-target="#carousel-example-1z" data-slide-to="2"></li> 
         </ol>
         <!--/.Indicators-->
         <!--Slides-->
@@ -20,10 +19,7 @@
                 <img class="d-block w-100" src="{{asset('images/oila2.jpg')}}" alt="Second slide">
             </div>
             <!--/Second slide-->
-            <!--Third slide-->
-            <div class="carousel-item">
-                <img class="d-block w-100" src="{{asset('images/oila1.jpg')}}" alt="Third slide">
-            </div>
+          
             <!--/Third slide-->
             <div class="carousel-item">
                     <img class="d-block w-100" src="{{asset('images/oila3.jpg')}}" alt="Fourth slide">
