@@ -3,7 +3,7 @@
 @section('content')
 @include('layouts._header')
      <!-- Page Content -->
-     <div class="container" style="background:white;  overflow:hidden">
+     <div class="container shadow news" style="padding:30px 30px;">
         <h1 class="mt-4 mb-3">So'ngi Yangiliklar
              
           </h1>
@@ -39,8 +39,11 @@
             </div>
           </div>
           <!-- /.row -->
-    
+          @if (!$loop->last)
           <hr>
+       
+      @endif
+         
        
     @endforeach
     

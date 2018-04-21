@@ -1,7 +1,7 @@
 @extends('layout')
 @section('content')
      <!-- Page Content -->
-     <div class="container" style="background:white;  overflow:hidden">
+     <div class="container news"  style="padding:30px 30px;">
         <h1 class="mt-4 mb-3">
            
             
@@ -41,7 +41,11 @@
           </div>
           <!-- /.row -->
     
+          @if (!$loop->last)
           <hr>
+          @else
+          <span style="margin-bottom:20px;"></span>
+           @endif
      @empty
      <h2>Hozircha bolimda yangiliklar yoq</h2>  
     @endforelse

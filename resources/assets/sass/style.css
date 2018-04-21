@@ -8,6 +8,15 @@ body {
     padding-top: 54px;
 }
 
+.news {
+    background: white;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    border: 1px solid rgb(208, 213, 217);
+    overflow: hidden;
+    border-radius: 4px;
+}
+
 @media (min-width: 992px) {
     body {
         padding-top: 56px;

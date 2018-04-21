@@ -19,7 +19,7 @@
         <!-- Styles -->
         <style>
             html, body {
-                background:url('/images/back1111.jpg');
+                background-color:rgb(251, 251, 252);
                 color: #636b6f;
           
                 margin: 0;
