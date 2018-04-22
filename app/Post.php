@@ -51,10 +51,15 @@ class Post extends Model
         return 'slug';
     }
 
+    public function comments()
+    {
+        return $this->morphMany(Comment::class, 'commentable')->where('reply_id', null);
+    }
+
     public function getImage()
     {
         if ($this->image == null) {
-            return '/uploads/noimage.png';
+            return '/images/noimage.jpg';
         }
         return '/uploads/' . $this->image;
     }

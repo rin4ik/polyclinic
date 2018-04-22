@@ -4,7 +4,7 @@
         
                   <!-- Categories Widget -->
                   <div class="card my-4"  >
-                    <h5 class="card-header">Kategoriyalar</h5>
+                    <h5 class="card-header">Kategoriyalar boyicha oqish</h5>
                     <div class="card-body">
                       <div class="row">
                         <div class="col-lg-6">
@@ -21,13 +21,21 @@
                       </div>
                     </div>
                   </div>
-        
+        @auth
                   <!-- Side Widget -->
                   <div class="card my-4">
-                    <h5 class="card-header">Side Widget</h5>
+                    <h5 class="card-header" style="color:red">Diqqat!</h5>
                     <div class="card-body">
-                      You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
+                     Izox qoldirganingizda boshqalarga xurmat saqlagan xolda, ularning fikrlarini xurmat qiling iltimos!
                     </div>
                   </div>
-        
+        @else
+            <!-- Side Widget -->
+            <div class="card my-4">
+                    <h5 class="card-header" style="color:red">Diqqat!</h5>
+                    <div class="card-body">
+                        Iltimos izox qoldirish uchun saytga <a href="/login">kiring!</a>
+                    </div>
+                </div>
+        @endauth
                 </div>
