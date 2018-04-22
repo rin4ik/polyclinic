@@ -84,7 +84,7 @@
       
                 
        @include('layouts._nav')
-       <div style="padding:50px">
+       <div style=" padding:30px; padding-bottom:200px">
             @yield('content')
             
        </div>

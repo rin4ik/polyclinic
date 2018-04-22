@@ -1,11 +1,11 @@
 @extends('layout')
 
 @section('content')
-<div class="container">
+<div class="container"  style="margin-top:50px" >
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header">{{ __('Royhatdan otish') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -65,12 +65,13 @@
                             </div>
                         </div>
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Royhatdan otish') }}
+                      
+                        <div class="modal-footer " style="background:#f5f8fa;border:1px solid rgb(204, 208, 211);">
+                                <button type="submit" class="btn btn-primary btn-sm"   >
+                                        {{ __('Royhatdan otish') }}
                                 </button>
-                            </div>
+
+                         
                         </div>
                     </form>
                 </div>

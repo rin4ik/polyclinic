@@ -1,9 +1,9 @@
 @extends('layout')
 
 @section('content')
-<div class="container">
+<div class="container" style="margin-top:50px">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-6">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
 
@@ -51,15 +51,17 @@
                             </div>
                         </div>
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                    
+                        <div class="modal-footer " style="background:#f5f8fa;border:1px solid rgb(204, 208, 211);">
+                                <button type="submit" class="btn btn-primary btn-sm"   >
                                     {{ __('Kirish') }}
                                 </button>
 
-                               
-                            </div>
+                                <a href="/register"  class="btn btn-outline-warning btn-sm"  >
+                                      <span style="text-muted;"> {{ __('Royhatdan otish') }}</span> 
+                                </a>
                         </div>
+
                     </form>
                 </div>
             </div>
