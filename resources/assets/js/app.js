@@ -21,8 +21,6 @@ window.flash = function(message, level = 'success') {
      * or customize the JavaScript scaffolding to fit your unique needs.
      */
 
-Vue.component('login', require('./components/Login.vue'));
-Vue.component('register', require('./components/Register.vue'));
 Vue.component('flash', require('./components/Flash.vue'));
 Vue.use(VModal);
 const app = new Vue({

@@ -937,10 +937,6 @@ footer a:hover {
     transform: translateY(-5px);
 }
 
-.shadows {
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset
-}
-
 
 /*---------------------------------------
      SOCIAL ICON              
@@ -1160,8 +1156,8 @@ footer a:hover {
     color: #0077e2;
 }
 
-#myFooter .google:hover {
-    color: #ef1a1a;
+#myFooter .vk:hover {
+    color: #4569cc;
 }
 
 #myFooter .twitter:hover {

@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" type="image/png" href="{{asset('images/logo.png')}}">
-        <title>5 Oilaviy Poliklinika</title>
+        <link rel="icon" type="image/png" href="{{asset('images/log1.png')}}">
+        <title>Oilaviy Poliklinika</title>
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -24,6 +24,11 @@
           
                 margin: 0;
                 padding:0;
+            }
+            footer{
+               
+                margin: 0;
+                padding:0; 
             }
             [v-cloak] {
                 display: none;
@@ -75,19 +80,18 @@
 
     <body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
              
-        <div id="app">
+        <div id="app"  >
       
                 
        @include('layouts._nav')
-       
-       @yield('content')
+       <div style="padding:50px">
+            @yield('content')
+            
+       </div>
         
         @include('layouts._footer')
         <flash levels="{{session('level','success')}}" message="{{session('flash')}}"></flash>
-        <div v-cloak >
-                @include('modals.all')
-               
-        </div> 
+        
         </div>
           <!-- Bootstrap core JavaScript --> 
             <script src="{{asset('js/app.js')}}"></script> 

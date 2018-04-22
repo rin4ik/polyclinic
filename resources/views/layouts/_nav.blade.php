@@ -54,15 +54,10 @@
                                 </li>
                             </ul>
                                 <ul class="navbar-nav ml-auto manu">
-                                @guest
-                                <li>
-                                <a class="nav-link"  @click="$modal.show('login')">{{ __('KIRISH') }}</a>
-                                    {{--  //<a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>  --}}
-                                </li>
-                                <li>
-                                    <a class="nav-link"   @click="$modal.show('register')">{{ __('ROYHATDAN OTISH') }}</a>
-                                </li>
-                                @else 
+                                        @guest
+                                        <li><a class="nav-link" href="{{ route('login') }}">{{ __('KIRISH') }}</a></li>
+                                        <li><a class="nav-link" href="{{ route('register') }}">{{ __('ROYHATDAN OTISH') }}</a></li>
+                                    @else
                                 
                                 <li class="nav-item dropdown">
                 
