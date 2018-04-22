@@ -2,10 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
+use App\Transformers\CommentTransformer;
+use App\Http\Requests\CreatePostCommentRequest;
+
 class PostCommentController extends Controller
 {
-    public function index(Post $post)
+    public function index($post)
     {
+        $post = Post::where('slug', $post)->firstOrFail();
+
         return response()->json(
         fractal()->collection($post->comments()->latestFirst()->get())
         ->parseIncludes(['replies'])

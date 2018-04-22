@@ -16,4 +16,5 @@ Auth::routes();
 Route::get('/kategoriyalar/{slug}', 'CategoryController@show')->name('category.show');
 Route::get('/yangiliklar/{category}/{post}', 'HomeController@show')->name('post.show');
 Route::get('/yangiliklar', 'HomeController@news')->name('posts');
+Route::get('/kategoriyalar/{slug}/izoxlar', 'PostCommentController@index');
 Route::get('/sahifa', 'UsersController@index');

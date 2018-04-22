@@ -1,5 +1,5 @@
 <!--Carousel Wrapper-->
-<div id="carousel-example-1z" class="carousel slide carousel-fade "  data-ride="carousel">
+<div id="carousel-example-1z" class="carousel slide carousel-fade " style="width:1350px;margin:0 auto; box-shadow:5px 5px 5px #c8ccce;  "  data-ride="carousel">
         <!--Indicators-->
         <ol class="carousel-indicators">
             <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
@@ -8,21 +8,21 @@
         </ol>
         <!--/.Indicators-->
         <!--Slides-->
-        <div class="carousel-inner" role="listbox">
+        <div class="carousel-inner"  role="listbox">
             <!--First slide-->
             <div class="carousel-item active">
-                <img class="d-block w-100" src="{{asset('images/pol5.jpg')}}" alt="First slide">
+                <img style="height:449px"  class="d-block w-100" src="{{asset('images/1.jpg')}}" alt="First slide">
             </div>
             <!--/First slide-->
             <!--Second slide-->
             <div class="carousel-item">
-                <img class="d-block w-100" src="{{asset('images/oila2.jpg')}}" alt="Second slide">
+                <img style="height:449px"  class="d-block w-100" src="{{asset('images/2.jpg')}}" alt="Second slide">
             </div>
             <!--/Second slide-->
           
             <!--/Third slide-->
             <div class="carousel-item">
-                    <img class="d-block w-100" src="{{asset('images/oila3.jpg')}}" alt="Fourth slide">
+                    <img style="height:449px" class="d-block w-100" src="{{asset('images/pol5.jpg')}}" alt="Fourth slide">
                 </div>
         </div>
         <!--/.Slides-->

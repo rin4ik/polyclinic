@@ -75,6 +75,14 @@
                 margin-bottom: 30px;
             }
         </style>
+        <script>
+                
+                window.App={!!json_encode(['csrfToken'=>csrf_token(),
+                'url'=>config('app.url'),
+                'user'=>Auth::user(),
+                'signedIn'=>Auth::check()
+                ])!!};
+            </script>
     </head>
     
 
