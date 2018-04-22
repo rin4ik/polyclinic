@@ -3,7 +3,7 @@
 @section('content')
 @include('layouts._header')
      <!-- Page Content -->
-     <div class="container shadow news" style="padding:30px 30px;">
+     <div class=" card clearfix shadow news" style="padding:30px 30px;">
         <h1 class="mt-4 mb-3">So'ngi Yangiliklar
              
           </h1>
@@ -20,8 +20,8 @@
           <!-- Project One -->
           <div id="all" class="row">
             <div class="col-md-7">
-              <a href="#">
-                <img class="img-fluid rounded mb-3 mb-md-0" src="{{$post->getImage()}}" alt="">
+              <a href="{{route('post.show',['category'=>$post->category->slug,'post'=>$post])}}">
+                <img style="height:450px; "  class="img-fluid rounded mb-3 mb-md-0" src="{{$post->getImage()}}" alt="">
               </a>
             </div>
             <div class="col-md-5">
@@ -30,7 +30,7 @@
             </h3>
             <span    style=" margin:20px 0;color:black ">  Muallif:  <a href="/sahifa"> {{$post->user->name}}</a></span>
             <span style="color:orange;float:right;  ">{{$post->created_at}}</span>
-              <p style="padding-top:20px">{{$post->content}}</p>
+              <p style="padding-top:20px">{{str_limit($post->content,545)}}</p>
               <div class="news-categories" style="float:right">
                     <li><a  href="{{route('category.show',$post->category)}}"><i class="fa fa-angle-right"></i> {{optional($post->category)->title}}</a></li>
             </div> 

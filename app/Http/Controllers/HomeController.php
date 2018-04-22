@@ -23,4 +23,10 @@ class HomeController extends Controller
         $posts = Post::with('category', 'user')->latest()->paginate(1);
         return view('pages.news', compact('posts'));
     }
+
+    public function show($category, Post $post)
+    {
+        $post->load('category', 'user');
+        return view('pages.show', compact('post'));
+    }
 }
