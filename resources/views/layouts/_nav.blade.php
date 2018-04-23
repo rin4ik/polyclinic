@@ -35,7 +35,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto navit"   >
                             <li class="nav-item" >
-                                    <a class="nav-link" href="about.html">XODIMLAR</a>
+                                    <a class="nav-link" href="/xodimlar">XODIMLAR</a>
                                 </li >
                                 <li  class="nav-item">
                                     <a class="nav-link" href="services.html">FOTO</a>
@@ -54,7 +54,7 @@
                                     <a class="nav-link" href="contact.html">MAHALLA</a>
                                 </li>
                                 <li  class="nav-item">
-                                    <a class="nav-link" href="contact.html">BOSH VRACH</a>
+                                    <a class="nav-link" href="{{route('vrach')}}">BOSH VRACH</a>
                                 </li>
                                 <li  class="nav-item">
                                     <a class="nav-link" href="contact.html">ALOQA</a>

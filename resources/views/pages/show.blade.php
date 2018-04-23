@@ -56,7 +56,11 @@
             </div>
            </div>   --}}
         @else
-                <h4 style="text-align:center">Iltimos izox qoldirish uchun saytga <a href="/login">kiring</a></h4>
+        <div class="text-center mt-4 mb-2">
+                <button class="btn btn-danger">Iltimos izox qoldirish uchun saytga kiring
+                    <i class="fa fa-sign-in ml-2"></i>
+                </button>
+            </div>
                 <post-comments post-slug="{{$post->slug}}"></post-comments>
         @endauth
               

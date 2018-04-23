@@ -13,14 +13,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $posts = Post::with('category', 'user')->latest()->get();
+        $posts = Post::with('category', 'user')->where('slug', '!=', 'vrach')->latest()->get();
 
         return view('pages.index', compact('posts'));
     }
 
     public function news()
     {
-        $posts = Post::with('category', 'user')->latest()->paginate(1);
+        $posts = Post::with('category', 'user')->where('slug', '!=', 'vrach')->latest()->paginate(10);
         return view('pages.news', compact('posts'));
     }
 

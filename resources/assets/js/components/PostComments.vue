@@ -6,9 +6,12 @@
 <textarea  rows="3" placeholder="Izox qoldiring" class="form-control video-comment__input" v-model="body">
  
 </textarea>
-<div class="pull-right">
-  <button type="submit" class="mt-3 btn btn-outline-default btn-sm" @click.prevent="createComment">jonatish</button>
-</div>
+ 
+  <div class="pull-right mt-1"  >
+                    <button class="btn btn-info " style="padding:9px 12px"  @click.prevent="createComment">jonatish
+                        <i class="fa fa-send ml-1"></i>
+                    </button>
+     </div>
 </div> 
 <ul class="media-list" style="padding-left:0;  ">
     
@@ -18,23 +21,25 @@
 <div class="media mb-4">
             <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
    <div class="media-body">
-              <h5 class="mt-0">{{comment.user.name}}</h5>
+              <h5 class="mt-0" style="color:black">{{comment.user.name}}</h5>
               
  <span v-text="ago(comment.created_at.date)"></span>
 <p class="mb-2">{{comment.body}}</p>
   
   <ul class="list-inline" >
     <li v-if="signedIn"  >
-      <a class=" mr-2" href="#" @click.prevent="toggleReplyForm(comment.id)">{{replyFormVisible === comment.id ? 'Bekor qilish' : 'Javob Yozish'}}</a>
+      <a class=" mr-2" href="#" style="color:#33b5e5" @click.prevent="toggleReplyForm(comment.id)">{{replyFormVisible === comment.id ? 'Bekor qilish' : 'Javob Yozish'}}</a>
     
       <a href="#" style="color:red"  v-if="user.id === comment.user.id || user.is_admin===1" @click.prevent="deleteComment(comment.id)">Ochirish</a>
     </li>
   </ul>
 <div v-if="signedIn">
  <div class="video-comment" v-if="replyFormVisible === comment.id" >
-   <textarea class="form-control mt-3" v-model="replyBody"></textarea>
-   <div class="pull-right" >
-     <button class="btn btn-blue btn-sm " type="submit" @click.prevent="createReply(comment.id)">Jonatish</button>
+   <textarea class="form-control mt-3 mb-1" v-model="replyBody"></textarea>
+   <div   > 
+     <button class="btn btn-info btn-sm" style="padding:9px 12px"  @click.prevent="createReply(comment.id)">jonatish
+                        <i class="fa fa-send ml-1"></i>
+                    </button>
       </div>
  </div>
  </div>

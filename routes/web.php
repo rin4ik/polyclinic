@@ -18,6 +18,10 @@ Route::get('/yangiliklar/{category}/{post}', 'HomeController@show')->name('post.
 Route::get('/yangiliklar', 'HomeController@news')->name('posts');
 Route::get('/kategoriyalar/{post}/izoxlar', 'PostCommentController@index');
 Route::get('/sahifa', 'UsersController@index');
+Route::get('/bosh-vrach', function () {
+    return view('pages.vrach');
+})->name('vrach');
+Route::get('/xodimlar', 'EmployeesController@index')->name('employee');
 Route::group(['middleware' => ['auth']], function () {
     Route::delete('/kategoriyalar/{post}/izoxlar/{comment}', 'PostCommentController@delete');
     Route::post('/kategoriyalar/{post}/izoxlar', 'PostCommentController@create');

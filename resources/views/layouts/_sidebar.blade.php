@@ -24,7 +24,8 @@
         @auth
                   <!-- Side Widget -->
                   <div class="card my-4">
-                    <h5 class="card-header" style="color:red">Diqqat!</h5>
+                    <h5 class="card-header" style="color:#721c24;background-color: #f8d7da;
+                    border-color: #f5c6cb;">Diqqat!</h5>
                     <div class="card-body">
                      Izox qoldirganingizda boshqalarga xurmat saqlagan xolda, ularning fikrlarini xurmat qiling iltimos!
                     </div>

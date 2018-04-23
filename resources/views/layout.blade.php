@@ -16,6 +16,7 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
 <!-- Material Design Bootstrap -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/css/mdb.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
         <!-- Styles -->
         <style>
             html, body {
@@ -103,9 +104,14 @@
         </div>
                    <script src="{{asset('js/app.js')}}"></script> 
      <!-- JQuery -->
- 
+     <script>
+            $(document).ready( function () {
+                $('#table_id').DataTable();
+            } );
+     </script>
+     
 <!-- JQuery -->
-
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
         </body>
         
         </html>

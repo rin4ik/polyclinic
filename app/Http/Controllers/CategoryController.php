@@ -10,7 +10,7 @@ class CategoryController extends Controller
     public function show($category)
     {
         $category = Category::where('slug', $category)->first();
-        $posts = Post::where('category_id', $category->id)->latest()->paginate(10);
+        $posts = Post::where('category_id', $category->id)->where('slug', '!=', 'vrach')->latest()->paginate(10);
         $posts->load('category', 'user');
         return view('pages.news', compact('posts'));
     }

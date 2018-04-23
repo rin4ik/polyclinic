@@ -65254,6 +65254,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -65670,12 +65675,12 @@ var render = function() {
             }
           }),
           _vm._v(" "),
-          _c("div", { staticClass: "pull-right" }, [
+          _c("div", { staticClass: "pull-right mt-1" }, [
             _c(
               "button",
               {
-                staticClass: "mt-3 btn btn-outline-default btn-sm",
-                attrs: { type: "submit" },
+                staticClass: "btn btn-info ",
+                staticStyle: { padding: "9px 12px" },
                 on: {
                   click: function($event) {
                     $event.preventDefault()
@@ -65683,7 +65688,10 @@ var render = function() {
                   }
                 }
               },
-              [_vm._v("jonatish")]
+              [
+                _vm._v("jonatish\n                        "),
+                _c("i", { staticClass: "fa fa-send ml-1" })
+              ]
             )
           ])
         ])
@@ -65705,9 +65713,11 @@ var render = function() {
                 "div",
                 { staticClass: "media-body" },
                 [
-                  _c("h5", { staticClass: "mt-0" }, [
-                    _vm._v(_vm._s(comment.user.name))
-                  ]),
+                  _c(
+                    "h5",
+                    { staticClass: "mt-0", staticStyle: { color: "black" } },
+                    [_vm._v(_vm._s(comment.user.name))]
+                  ),
                   _vm._v(" "),
                   _c("span", {
                     domProps: {
@@ -65726,6 +65736,7 @@ var render = function() {
                             "a",
                             {
                               staticClass: " mr-2",
+                              staticStyle: { color: "#33b5e5" },
                               attrs: { href: "#" },
                               on: {
                                 click: function($event) {
@@ -65779,7 +65790,7 @@ var render = function() {
                                     expression: "replyBody"
                                   }
                                 ],
-                                staticClass: "form-control mt-3",
+                                staticClass: "form-control mt-3 mb-1",
                                 domProps: { value: _vm.replyBody },
                                 on: {
                                   input: function($event) {
@@ -65791,12 +65802,12 @@ var render = function() {
                                 }
                               }),
                               _vm._v(" "),
-                              _c("div", { staticClass: "pull-right" }, [
+                              _c("div", [
                                 _c(
                                   "button",
                                   {
-                                    staticClass: "btn btn-blue btn-sm ",
-                                    attrs: { type: "submit" },
+                                    staticClass: "btn btn-info btn-sm",
+                                    staticStyle: { padding: "9px 12px" },
                                     on: {
                                       click: function($event) {
                                         $event.preventDefault()
@@ -65804,7 +65815,12 @@ var render = function() {
                                       }
                                     }
                                   },
-                                  [_vm._v("Jonatish")]
+                                  [
+                                    _vm._v(
+                                      "jonatish\n                        "
+                                    ),
+                                    _c("i", { staticClass: "fa fa-send ml-1" })
+                                  ]
                                 )
                               ])
                             ])
