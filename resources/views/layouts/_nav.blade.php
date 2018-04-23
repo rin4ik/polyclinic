@@ -57,13 +57,13 @@
                                     <a class="nav-link" href="{{route('vrach')}}">BOSH VRACH</a>
                                 </li>
                                 <li  class="nav-item">
-                                    <a class="nav-link" href="contact.html">ALOQA</a>
+                                    <a class="nav-link" href="/aloqa">ALOQA</a>
                                 </li>
                             </ul>
                                 <ul class="navbar-nav ml-auto navit">
                                         @guest
-                                        <li><a class="nav-link" href="{{ route('login') }}">{{ __('KIRISH') }}</a></li>
-                                        <li><a class="nav-link" href="{{ route('register') }}">{{ __('ROYHATDAN OTISH') }}</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">{{ __('KIRISH') }}</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">{{ __('ROYHATDAN OTISH') }}</a></li>
                                     @else
                                 
                                 <li class="nav-item dropdown">

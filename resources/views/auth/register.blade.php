@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Royhatdan otish') }}</div>
+                <div class="card-header" style="background:rgb(233, 243, 233);">{{ __('ROYHATDAN OTISH') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -66,9 +66,10 @@
                         </div>
 
                       
-                        <div class="modal-footer " style="background:#f5f8fa;border:1px solid rgb(204, 208, 211);">
+                        <div class="modal-footer "  >
                                 <button type="submit" class="btn btn-primary btn-sm"   >
                                         {{ __('Royhatdan otish') }}
+                                        <i class="fa fa-address-book ml-1"></i>
                                 </button>
 
                          

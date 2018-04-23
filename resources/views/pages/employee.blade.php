@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')  
-			<div class="wrap-table100" style="margin:0 auto">
+			<div class="wrap-table100" style="margin:0 auto; margin-top:50px">
 				<div class="table100 ver1 m-b-110">
 					<div class="table100-head">
 						<table>

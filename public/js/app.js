@@ -65259,6 +65259,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -65715,7 +65716,7 @@ var render = function() {
                 [
                   _c(
                     "h5",
-                    { staticClass: "mt-0", staticStyle: { color: "black" } },
+                    { staticClass: "mt-0", staticStyle: { color: "#202020" } },
                     [_vm._v(_vm._s(comment.user.name))]
                   ),
                   _vm._v(" "),
@@ -65836,14 +65837,23 @@ var render = function() {
                       }),
                       _vm._v(" "),
                       _c("div", { staticClass: "media-body" }, [
-                        _c("h5", { staticClass: "mb-2" }, [
-                          _vm._v(" " + _vm._s(reply.user.name))
-                        ]),
-                        _vm._v(
-                          "\n               " +
-                            _vm._s(reply.body) +
-                            "\n         "
+                        _c(
+                          "h5",
+                          {
+                            staticClass: "mb-2",
+                            staticStyle: { color: "#202020" }
+                          },
+                          [_vm._v(" " + _vm._s(reply.user.name))]
                         ),
+                        _vm._v(" "),
+                        _c("span", {
+                          domProps: {
+                            textContent: _vm._s(_vm.ago(reply.created_at.date))
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("p", [_vm._v(_vm._s(reply.body))]),
+                        _vm._v(" "),
                         _c("ul", { staticClass: "list-inline" }, [
                           _c("li"),
                           _vm.signedIn

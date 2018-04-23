@@ -1,13 +1,14 @@
 @extends('layout')
 
 @section('content')
-<div class="container" style="margin-top:50px">
+<div class="container" style="margin-top:50px;">
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header" style="background:rgb(233, 243, 233);  padding:15px 15px; 
+                 ">{{ __('LOGIN') }}</div>
 
-                <div class="card-body">
+                <div class="card-body" style="padding:30px 30px">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
@@ -52,13 +53,16 @@
                         </div>
 
                     
-                        <div class="modal-footer " style="background:#f5f8fa;border:1px solid rgb(204, 208, 211);">
+                        <div class="modal-footer "  >
                                 <button type="submit" class="btn btn-primary btn-sm"   >
                                     {{ __('Kirish') }}
+                                    <i class="fa fa-sign-in ml-1"></i>
                                 </button>
 
-                                <a href="/register"  class="btn btn-outline-warning btn-sm"  >
-                                      <span style="text-muted;"> {{ __('Royhatdan otish') }}</span> 
+                                <a href="/register"  class="btn btn-primary btn-sm"  >
+                                      <span style="text-muted;"> {{ __('Royhatdan otish') }}
+                                            <i class="fa fa-address-book ml-1"></i>      
+                                    </span> 
                                 </a>
                         </div>
 

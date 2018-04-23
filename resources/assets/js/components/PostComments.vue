@@ -21,7 +21,7 @@
 <div class="media mb-4">
             <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
    <div class="media-body">
-              <h5 class="mt-0" style="color:black">{{comment.user.name}}</h5>
+              <h5 class="mt-0" style="color:#202020">{{comment.user.name}}</h5>
               
  <span v-text="ago(comment.created_at.date)"></span>
 <p class="mb-2">{{comment.body}}</p>
@@ -47,8 +47,9 @@
                    <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
    
                 <div class="media-body">
-                  <h5 class="mb-2"> {{reply.user.name}}</h5>
-               {{reply.body}}
+                  <h5 class="mb-2" style="color:#202020"> {{reply.user.name}}</h5>
+                  <span v-text="ago(reply.created_at.date)"></span>
+               <p>{{reply.body}}</p>
          <ul class="list-inline"  >
                 
                 <li> 

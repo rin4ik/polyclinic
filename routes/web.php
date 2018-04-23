@@ -21,7 +21,12 @@ Route::get('/sahifa', 'UsersController@index');
 Route::get('/bosh-vrach', function () {
     return view('pages.vrach');
 })->name('vrach');
-Route::get('/xodimlar', 'EmployeesController@index')->name('employee');
+Route::get('/xodimlar', function () {
+    return view('pages.employee');
+})->name('employee');
+Route::get('/aloqa', function () {
+    return view('pages.contact');
+})->name('employee');
 Route::group(['middleware' => ['auth']], function () {
     Route::delete('/kategoriyalar/{post}/izoxlar/{comment}', 'PostCommentController@delete');
     Route::post('/kategoriyalar/{post}/izoxlar', 'PostCommentController@create');
