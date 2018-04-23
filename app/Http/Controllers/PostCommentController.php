@@ -21,8 +21,7 @@ class PostCommentController extends Controller
 
     public function create(CreatePostCommentRequest $request, Post $post)
     {
-        $this->authorize('comment', $post);
-        $comment = $video->comments()->create([
+        $comment = $post->comments()->create([
             'body' => $request->body,
             'reply_id' => $request->get('reply_id', null),
             'user_id' => $request->user()->id
