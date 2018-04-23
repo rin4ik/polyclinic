@@ -2,6 +2,7 @@
 
 namespace App\Transformers;
 
+use App\User;
 use App\Comment;
 use League\Fractal\TransformerAbstract;
 
@@ -11,9 +12,10 @@ class CommentTransformer extends TransformerAbstract
 
     public function transform(Comment $comment)
     {
+        $user = User::find($comment->user_id);
         return [
             'id' => $comment->id,
-            'user_id' => $comment->user_id,
+            'user' => $user,
             'body' => $comment->body,
             'created_at' => $comment->created_at,
             'updated_at' => $comment->updated_at

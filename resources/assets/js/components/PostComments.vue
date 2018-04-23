@@ -1,7 +1,5 @@
 <template>
-  <div>
-
-  {{postSlug}}
+  <div> 
 <p>{{pluralizeComment(comments.length) }}</p>
 
 <div class="video-comment clearfix" v-if="signedIn" >
@@ -9,56 +7,56 @@
  
 </textarea>
 <div class="pull-right">
-  <button type="submit" class="btn btn-outline-success btn-sm" @click.prevent="createComment">jonatish</button>
+  <button type="submit" class="mt-3 btn btn-outline-success btn-sm" @click.prevent="createComment">jonatish</button>
 </div>
 </div> 
 <ul class="media-list" style="padding-left:0;  ">
-    <li class="media" v-for="comment in comments">
-        <div class="media-left">
-            <a :href="'/channel/'+comment.channel.data.slug">
-            <img :src="comment.channel.data.image" class="media-object" :alt="comment.channel.data.image" >
-            </a>
-        </div>
-        <div class="media-body">
-<a :href="'/channel/'+comment.channel.data.slug">{{comment.channel.data.name}}</a>
- <span v-text="ago(comment.created_at.date)"></span>
-<p>{{comment.body}}</p>
-  
-  <ul class="list-inline" style="margin-bottom:10px; margin-top:-20px;" >
-    <li v-if="signedIn">
-      <a href="#" @click.prevent="toggleReplyForm(comment.id)">{{replyFormVisible === comment.id ? 'Cancel' : 'Reply'}}</a>
     
-      <a href="#" style="color:red"  v-if="user.id === comment.user_id" @click.prevent="deleteComment(comment.id)">Delete</a>
+    <li class="media" v-for="comment in comments">
+         
+        <div class="media-body">
+<div class="media mb-4">
+            <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+   <div class="media-body">
+              <h5 class="mt-0">{{comment.user.name}}</h5>
+              
+ <span v-text="ago(comment.created_at.date)"></span>
+<p class="mb-2">{{comment.body}}</p>
+  
+  <ul class="list-inline" >
+    <li v-if="signedIn"  >
+      <a class=" mr-2" href="#" @click.prevent="toggleReplyForm(comment.id)">{{replyFormVisible === comment.id ? 'Bekor qilish' : 'Javob Yozish'}}</a>
+    
+      <a href="#" style="color:red"  v-if="user.id === comment.user.id" @click.prevent="deleteComment(comment.id)">Ochirish</a>
     </li>
   </ul>
 
  <div class="video-comment" v-if="replyFormVisible === comment.id" >
-   <textarea class="form-control" v-model="replyBody"></textarea>
+   <textarea class="form-control mt-3" v-model="replyBody"></textarea>
    <div class="pull-right" style="margin-bottom:10px;">
      <button class="btn btn-blue btn-sm " type="submit" @click.prevent="createReply(comment.id)">Reply</button>
       </div>
  </div>
-<div class="media" v-for="reply in comment.replies.data">
-    <div class="media-left">
-            <a :href="'/channel/'+reply.channel.data.slug">
-            <img :src="reply.channel.data.image" class="media-object" :alt="comment.channel.data.image" >
-            </a>
-     </div>
-     <div class="media-body">
-         <a :href="'/channel/'+reply.channel.data.slug">{{reply.channel.data.name}}</a>
- <span v-text="ago(reply.created_at.date)"></span>
- <p>{{reply.body}}</p>
-   <ul class="list-inline" style="margin-bottom:10px; margin-top:-20px;" >
-     
-    <li>
-      <a href="#" style="color:red" v-if="user.id === reply.user_id" @click.prevent="deleteComment(reply.id)">Delete</a>
-    </li>
-  </ul>
-     </div>
-</div> 
  
-
+      <div class="media mt-4" v-for="reply in comment.replies.data">
+                   <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+   
+                <div class="media-body">
+                  <h5 class="mb-2"> {{reply.user.name}}</h5>
+               {{reply.body}}
+         <ul class="list-inline"  >
+                
+                <li> 
+               <p><a href="#" style="color:red" v-if="user.id === reply.user.id"  @click.prevent="deleteComment(reply.id)">Ochirish</a></p> 
+                </li>
+        </ul>
+                </div>
+       </div>
+  
+ </div>
+</div>
         </div> 
+    
     </li>
 </ul>
 </div>
@@ -81,15 +79,25 @@ export default {
     postSlug: null
   },
   methods: {
+    getComments() {
+      axios
+        .get("/kategoriyalar/" + this.postSlug + "/izoxlar")
+        .then(response => {
+          this.comments = response.data.data;
+        });
+    },
     deleteComment(id) {
       if (!confirm("Are you sure you want to delete this comment?")) {
         return;
       }
       this.deleteById(id);
-      this.$http
-        .delete("/videos/" + this.postSlug + "/comments/" + id)
+      axios
+        .delete("/kategoriyalar/" + this.postSlug + "/izoxlar/" + id)
         .then(() => {
           flash("succesfully deleted");
+        })
+        .catch(error => {
+          console.log(error.response.data.errors);
         });
     },
     deleteById(id) {
@@ -106,60 +114,6 @@ export default {
         });
       });
     },
-    toggleReplyForm(commentId) {
-      this.replyBody = null;
-      if (this.replyFormVisible === commentId) {
-        this.replyFormVisible = null;
-        return;
-      }
-      this.replyFormVisible = commentId;
-    },
-    createReply(commentId) {
-      this.$http
-        .post("/videos/" + this.postSlug + "/comments", {
-          body: this.replyBody,
-          reply_id: commentId
-        })
-        .then(
-          response => {
-            this.comments.map((comment, index) => {
-              if (comment.id === commentId) {
-                this.comments[index].replies.data.unshift(response.data.data);
-              }
-            });
-            this.replyBody = null;
-            this.replyFormVisible = null;
-
-            flash("Your reply successfully added");
-          },
-          () => {
-            flash("Something went wrong", "danger");
-          }
-        );
-    },
-    createComment() {
-      this.$http
-        .post("/videos/" + this.videoUid + "/comments", {
-          body: this.body
-        })
-        .then(
-          response => {
-            this.comments.unshift(response.data.data);
-            this.body = null;
-            flash("Your reply successfully added");
-          },
-          () => {
-            flash("Something went wrong", "danger");
-          }
-        );
-    },
-    getComments() {
-      this.$http
-        .get("/kategoriyalar/" + this.postSlug + "/izoxlar")
-        .then(response => {
-          this.comments = response.data.data;
-        });
-    },
     pluralizeComment(count) {
       if (count === 1) {
         return count + " Izox";
@@ -173,8 +127,17 @@ export default {
           .subtract(120, "minutes")
           .from(moment()) + "..."
       );
+    },
+    toggleReplyForm(commentId) {
+      this.replyBody = null;
+      if (this.replyFormVisible === commentId) {
+        this.replyFormVisible = null;
+        return;
+      }
+      this.replyFormVisible = commentId;
     }
   },
+
   mounted() {
     this.getComments();
   }

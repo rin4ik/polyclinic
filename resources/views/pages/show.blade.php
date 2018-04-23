@@ -38,7 +38,7 @@
         <post-comments post-slug="{{$post->slug}}"></post-comments>
       
 
-          <!-- Comment with nested comments -->
+          {{--  <!-- Comment with nested comments -->
           <div class="media mb-4">
             <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
             <div class="media-body">
@@ -54,7 +54,7 @@
               </div>
 
             </div>
-            </div>
+           </div>   --}}
         @else
                 <h4 style="text-align:center">Iltimos izox qoldirish uchun saytga <a href="/login">kiring</a></h4>
                 <post-comments post-slug="{{$post->slug}}"></post-comments>

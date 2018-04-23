@@ -11,18 +11,18 @@
         <div class="carousel-inner"  role="listbox">
             <!--First slide-->
             <div class="carousel-item active">
-                <img style="height:449px"  class="d-block w-100" src="{{asset('images/1.jpg')}}" alt="First slide">
+                <img style="height:450px"  class="d-block w-100" src="{{asset('images/1.jpg')}}" alt="First slide">
             </div>
             <!--/First slide-->
             <!--Second slide-->
             <div class="carousel-item">
-                <img style="height:449px"  class="d-block w-100" src="{{asset('images/2.jpg')}}" alt="Second slide">
+                <img style="height:450px"  class="d-block w-100" src="{{asset('images/2.jpg')}}" alt="Second slide">
             </div>
             <!--/Second slide-->
           
             <!--/Third slide-->
             <div class="carousel-item">
-                    <img style="height:449px" class="d-block w-100" src="{{asset('images/pol5.jpg')}}" alt="Fourth slide">
+                    <img style="height:450px" class="d-block w-100" src="{{asset('images/pol5.jpg')}}" alt="Fourth slide">
                 </div>
         </div>
         <!--/.Slides-->
