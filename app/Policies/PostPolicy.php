@@ -19,7 +19,7 @@ class PostPolicy
         return $user->id === $video->channel->user_id;
     }
 
-    public function delete(User $user, Video $video)
+    public function delete(User $user, Post $post)
     {
         return $user->id === $video->channel->user_id;
     }
