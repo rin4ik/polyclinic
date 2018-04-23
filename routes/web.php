@@ -20,4 +20,5 @@ Route::get('/kategoriyalar/{post}/izoxlar', 'PostCommentController@index');
 Route::get('/sahifa', 'UsersController@index');
 Route::group(['middleware' => ['auth']], function () {
     Route::delete('/kategoriyalar/{post}/izoxlar/{comment}', 'PostCommentController@delete');
+    Route::post('/kategoriyalar/{post}/izoxlar', 'PostCommentController@create');
 });

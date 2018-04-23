@@ -60,7 +60,7 @@
             .title {
                 font-size: 84px;
             }
-
+       
             .links > a {
                 color: #636b6f;
                 padding: 0 25px;
@@ -101,10 +101,11 @@
         <flash levels="{{session('level','success')}}" message="{{session('flash')}}"></flash>
         
         </div>
-          <!-- Bootstrap core JavaScript --> 
-            <script src="{{asset('js/app.js')}}"></script> 
+                   <script src="{{asset('js/app.js')}}"></script> 
      <!-- JQuery -->
  
+<!-- JQuery -->
+
         </body>
         
         </html>

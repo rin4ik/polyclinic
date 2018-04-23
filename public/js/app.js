@@ -65252,6 +65252,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -65278,28 +65280,61 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         _this.comments = response.data.data;
       });
     },
+    createReply: function createReply(commentId) {
+      var _this2 = this;
+
+      axios.post("/kategoriyalar/" + this.postSlug + "/izoxlar", {
+        body: this.replyBody,
+        reply_id: commentId
+      }).then(function (response) {
+        _this2.comments.map(function (comment, index) {
+          if (comment.id === commentId) {
+            _this2.comments[index].replies.data.unshift(response.data.data);
+          }
+        });
+        _this2.replyBody = null;
+        _this2.replyFormVisible = null;
+
+        flash("Sizning izoxingiz jonatildi!");
+      }, function () {
+        flash("Nimadur notogri", "danger");
+      });
+    },
+    createComment: function createComment() {
+      var _this3 = this;
+
+      axios.post("/kategoriyalar/" + this.postSlug + "/izoxlar", {
+        body: this.body
+      }).then(function (response) {
+        _this3.comments.unshift(response.data.data);
+        _this3.body = null;
+        flash("Sizning izoxingiz jonatildi!");
+      }, function () {
+        flash("Nimadur notogri", "danger");
+      });
+    },
     deleteComment: function deleteComment(id) {
-      if (!confirm("Are you sure you want to delete this comment?")) {
+      if (!confirm("Siz izoxni oxhirishni chindan istaysizmi?")) {
         return;
       }
       this.deleteById(id);
       axios.delete("/kategoriyalar/" + this.postSlug + "/izoxlar/" + id).then(function () {
-        flash("succesfully deleted");
+        flash("Izox Ochirildi!");
       }).catch(function (error) {
         console.log(error.response.data.errors);
       });
     },
     deleteById: function deleteById(id) {
-      var _this2 = this;
+      var _this4 = this;
 
       this.comments.map(function (comment, index) {
         if (comment.id === id) {
-          _this2.comments.splice(index, 1);
+          _this4.comments.splice(index, 1);
           return;
         }
         comment.replies.data.map(function (reply, replyIndex) {
           if (reply.id == id) {
-            _this2.comments[index].replies.data.splice(replyIndex, 1);
+            _this4.comments[index].replies.data.splice(replyIndex, 1);
             return;
           }
         });
@@ -65607,7 +65642,9 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("p", [_vm._v(_vm._s(_vm.pluralizeComment(_vm.comments.length)))]),
+    _c("p", { staticStyle: { color: "green" } }, [
+      _vm._v(_vm._s(_vm.pluralizeComment(_vm.comments.length)))
+    ]),
     _vm._v(" "),
     _vm.signedIn
       ? _c("div", { staticClass: "video-comment clearfix" }, [
@@ -65637,7 +65674,7 @@ var render = function() {
             _c(
               "button",
               {
-                staticClass: "mt-3 btn btn-outline-success btn-sm",
+                staticClass: "mt-3 btn btn-outline-default btn-sm",
                 attrs: { type: "submit" },
                 on: {
                   click: function($event) {
@@ -65708,7 +65745,8 @@ var render = function() {
                             ]
                           ),
                           _vm._v(" "),
-                          _vm.user.id === comment.user.id
+                          _vm.user.id === comment.user.id ||
+                          _vm.user.is_admin === 1
                             ? _c(
                                 "a",
                                 {
@@ -65728,52 +65766,49 @@ var render = function() {
                       : _vm._e()
                   ]),
                   _vm._v(" "),
-                  _vm.replyFormVisible === comment.id
-                    ? _c("div", { staticClass: "video-comment" }, [
-                        _c("textarea", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.replyBody,
-                              expression: "replyBody"
-                            }
-                          ],
-                          staticClass: "form-control mt-3",
-                          domProps: { value: _vm.replyBody },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.replyBody = $event.target.value
-                            }
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "pull-right",
-                            staticStyle: { "margin-bottom": "10px" }
-                          },
-                          [
-                            _c(
-                              "button",
-                              {
-                                staticClass: "btn btn-blue btn-sm ",
-                                attrs: { type: "submit" },
+                  _vm.signedIn
+                    ? _c("div", [
+                        _vm.replyFormVisible === comment.id
+                          ? _c("div", { staticClass: "video-comment" }, [
+                              _c("textarea", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.replyBody,
+                                    expression: "replyBody"
+                                  }
+                                ],
+                                staticClass: "form-control mt-3",
+                                domProps: { value: _vm.replyBody },
                                 on: {
-                                  click: function($event) {
-                                    $event.preventDefault()
-                                    _vm.createReply(comment.id)
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.replyBody = $event.target.value
                                   }
                                 }
-                              },
-                              [_vm._v("Reply")]
-                            )
-                          ]
-                        )
+                              }),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "pull-right" }, [
+                                _c(
+                                  "button",
+                                  {
+                                    staticClass: "btn btn-blue btn-sm ",
+                                    attrs: { type: "submit" },
+                                    on: {
+                                      click: function($event) {
+                                        $event.preventDefault()
+                                        _vm.createReply(comment.id)
+                                      }
+                                    }
+                                  },
+                                  [_vm._v("Jonatish")]
+                                )
+                              ])
+                            ])
+                          : _vm._e()
                       ])
                     : _vm._e(),
                   _vm._v(" "),
@@ -65794,26 +65829,31 @@ var render = function() {
                             "\n         "
                         ),
                         _c("ul", { staticClass: "list-inline" }, [
-                          _c("li", [
-                            _c("p", [
-                              _vm.user.id === reply.user.id
-                                ? _c(
-                                    "a",
-                                    {
-                                      staticStyle: { color: "red" },
-                                      attrs: { href: "#" },
-                                      on: {
-                                        click: function($event) {
-                                          $event.preventDefault()
-                                          _vm.deleteComment(reply.id)
-                                        }
-                                      }
-                                    },
-                                    [_vm._v("Ochirish")]
-                                  )
-                                : _vm._e()
-                            ])
-                          ])
+                          _c("li"),
+                          _vm.signedIn
+                            ? _c("li", [
+                                _c("p", [
+                                  _vm.user.id === reply.user.id ||
+                                  _vm.user.is_admin === 1
+                                    ? _c(
+                                        "a",
+                                        {
+                                          staticStyle: { color: "red" },
+                                          attrs: { href: "#" },
+                                          on: {
+                                            click: function($event) {
+                                              $event.preventDefault()
+                                              _vm.deleteComment(reply.id)
+                                            }
+                                          }
+                                        },
+                                        [_vm._v("Ochirish")]
+                                      )
+                                    : _vm._e()
+                                ])
+                              ])
+                            : _vm._e(),
+                          _vm.signedIn ? _c("li") : _vm._e()
                         ])
                       ])
                     ])

@@ -10434,25 +10434,24 @@ body {
   margin-bottom: 30px;
 }
 
-.manu {
+.navit {
   float: right;
 }
 
-.manu li {
+.navit li {
   float: left;
-  font-weight: 600;
+  font-weight: 400;
+  margin-left: 14px;
 }
 
-.manu li a {
+.navit li a {
   color: #fff;
   text-decoration: none;
   display: block;
-  border-bottom: 3px solid #263238;
 }
 
-.manu li a:hover {
+.navit li a:hover {
   color: #3f9925;
-  border-bottom: 3px solid #d32b2b;
 }
 
 header p,

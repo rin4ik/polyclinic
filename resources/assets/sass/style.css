@@ -37,25 +37,14 @@ body {
     margin-bottom: 30px;
 }
 
-.manu {
-    float: right;
-}
-
 .manu li {
-    float: left;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 .manu li a {
     color: #fff;
     text-decoration: none;
     display: block;
-    border-bottom: 3px solid #263238;
-}
-
-.manu li a:hover {
-    color: #3f9925;
-    border-bottom: 3px solid #d32b2b;
 }
 
 header p,
@@ -1213,4 +1202,12 @@ body {
 #myFooter {
     flex: 0 0 auto;
     -webkit-flex: 0 0 auto;
+}
+
+.navbar .btn-group .dropdown-menu a:hover {
+    color: rgb(114, 11, 11) !important;
+}
+
+.navbar .btn-group .dropdown-menu a:active {
+    color: rgb(129, 13, 13) !important;
 }

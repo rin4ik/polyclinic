@@ -1,29 +1,32 @@
 <!--Carousel Wrapper-->
-<div id="carousel-example-1z" class="carousel slide carousel-fade " style="width:1350px;margin:0 auto; box-shadow:5px 5px 5px #c8ccce;  "  data-ride="carousel">
+<div class="col-md-12"  >
+
+
+<div id="carousel-example-1z" style="box-shadow:5px 5px 5px #9fa0a1" class="carousel slide carousel-fade" data-ride="carousel">
         <!--Indicators-->
         <ol class="carousel-indicators">
             <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
             <li data-target="#carousel-example-1z" data-slide-to="1"></li>
-            <li data-target="#carousel-example-1z" data-slide-to="2"></li> 
+            <li data-target="#carousel-example-1z" data-slide-to="2"></li>
         </ol>
         <!--/.Indicators-->
         <!--Slides-->
-        <div class="carousel-inner"  role="listbox">
+        <div class="carousel-inner" role="listbox">
             <!--First slide-->
             <div class="carousel-item active">
-                <img style="height:450px"  class="d-block w-100" src="{{asset('images/1.jpg')}}" alt="First slide">
+                <img class="d-block w-100" style="height:450px" src="{{asset('images/1.jpg')}}" alt="First slide">
             </div>
             <!--/First slide-->
             <!--Second slide-->
             <div class="carousel-item">
-                <img style="height:450px"  class="d-block w-100" src="{{asset('images/2.jpg')}}" alt="Second slide">
+                <img class="d-block w-100" style="height:450px" src="{{asset('images/2.jpg')}}" alt="Second slide">
             </div>
             <!--/Second slide-->
-          
-            <!--/Third slide-->
+            <!--Third slide-->
             <div class="carousel-item">
-                    <img style="height:450px" class="d-block w-100" src="{{asset('images/pol5.jpg')}}" alt="Fourth slide">
-                </div>
+                <img class="d-block w-100" style="height:450px" src="{{asset('images/pol5.jpg')}}" alt="Third slide">
+            </div>
+            <!--/Third slide-->
         </div>
         <!--/.Slides-->
         <!--Controls-->
@@ -37,4 +40,4 @@
         </a>
         <!--/.Controls-->
     </div>
-    <!--/.Carousel Wrapper-->
+    <!--/.Carousel Wrapper--></div>
