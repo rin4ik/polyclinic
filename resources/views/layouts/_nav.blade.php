@@ -23,9 +23,9 @@
             </div>
         </div>
     </header>
-   <img src="{{asset('images/header.png')}}" style="width:100%; height:210px; " alt="">
+   <img src="{{asset('images/logo.jpg')}}" style="width:100%; height:210px; " alt="">
      <!-- Navigation -->
-     <nav class="navbar navbar-expand-lg navbar-dark special-color-dark lighten-1" style="padding:12px 0">
+     <nav class="navbar navbar-expand-lg navbar-dark special-color-dark lighten-1" style="padding: 5px 12px">
             <div class="container">
                     <a style="margin-left:-20px" class="navbar-brand" href="/"><img src="{{asset('images/logo11.png')}}" alt=""  ></a>
                     
@@ -33,27 +33,34 @@
               <span class="navbar-toggler-icon"></span>
             </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto manu"   >
-                            <li >
+                    <ul class="navbar-nav ml-auto navit"   >
+                            <li class="nav-item" >
                                     <a class="nav-link" href="about.html">XODIMLAR</a>
-                                </li>
-                                <li  >
+                                </li >
+                                <li  class="nav-item">
                                     <a class="nav-link" href="services.html">FOTO</a>
                                 </li>
-                                <li  >
-                                    <a class="nav-link" href="/yangiliklar">YANGILIKLAR</a>
+                                <li  class="nav-item btn-group">
+                                            <span class="nav-link dropdown-toggle"   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor:pointer;">KATEGORIYALAR</span>
+                                                <div class="dropdown-menu">
+                                                   @foreach($categories as $category)
+                                                    <a class="dropdown-item"   href="{{route('category.show',$category)}}">{{$category->title}}</a>
+                                                    @endforeach
+                                                  
+                                                </div> 
                                 </li>
-                                <li  >
+                                
+                                <li  class="nav-item">
                                     <a class="nav-link" href="contact.html">MAHALLA</a>
                                 </li>
-                                <li  >
+                                <li  class="nav-item">
                                     <a class="nav-link" href="contact.html">BOSH VRACH</a>
                                 </li>
-                                <li  >
+                                <li  class="nav-item">
                                     <a class="nav-link" href="contact.html">ALOQA</a>
                                 </li>
                             </ul>
-                                <ul class="navbar-nav ml-auto manu">
+                                <ul class="navbar-nav ml-auto navit">
                                         @guest
                                         <li><a class="nav-link" href="{{ route('login') }}">{{ __('KIRISH') }}</a></li>
                                         <li><a class="nav-link" href="{{ route('register') }}">{{ __('ROYHATDAN OTISH') }}</a></li>
