@@ -35,7 +35,7 @@
   </ul>
 <div v-if="signedIn">
  <div class="video-comment" v-if="replyFormVisible === comment.id" >
-   <textarea class="form-control mt-3 mb-1" v-model="replyBody"></textarea>
+   <textarea class="form-control  mb-1" v-model="replyBody"></textarea>
    <div   > 
      <button class="btn btn-info btn-sm" style="padding:9px 12px"  @click.prevent="createReply(comment.id)">jonatish
                         <i class="fa fa-send ml-1"></i>

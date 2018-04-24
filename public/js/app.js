@@ -30404,9 +30404,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_js_modal___default.a);
 var app = new Vue({
     el: '#app'
 });
-var my = new Vue({
-    el: '#my'
-});
 
 /***/ }),
 /* 139 */
@@ -65794,7 +65791,7 @@ var render = function() {
                                     expression: "replyBody"
                                   }
                                 ],
-                                staticClass: "form-control mt-3 mb-1",
+                                staticClass: "form-control  mb-1",
                                 domProps: { value: _vm.replyBody },
                                 on: {
                                   input: function($event) {

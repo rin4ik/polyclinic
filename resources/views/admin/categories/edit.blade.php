@@ -20,7 +20,7 @@
               <h3 class="box-title">Меняем категорию</h3>
             </div>
             <div class="box-body">
-              <form action="/admin/categories/{{$category->id}}" method="POST">
+              <form action="/admin/categories/{{$category->slug}}" method="POST">
                 {{ csrf_field() }} {{ method_field('PATCH') }}
               <div class="col-md-6">
                 <div class="form-group">

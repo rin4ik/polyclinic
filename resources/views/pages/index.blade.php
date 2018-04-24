@@ -28,7 +28,7 @@
               <h3><a href="{{route('post.show',['category'=>$post->category->slug,'post'=>$post])}}">{{$post->title}}</a>
                 
             </h3>
-            <span    style=" margin:20px 0;color:black ">  Muallif:  <a href="/sahifa"> {{$post->user->name}}</a></span>
+            <span    style=" margin:20px 0;color:grey ">  Muallif:  <span style="color:#3a3939"> {{$post->user->name}}</span></span>
             <span style="color:orange;float:right;  ">{{$post->created_at}}</span>
               <p style="padding-top:20px">{!! str_limit($post->content,545) !!}</p>
               <div class="news-categories" style="float:right">

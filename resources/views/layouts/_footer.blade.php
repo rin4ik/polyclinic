@@ -23,9 +23,8 @@
                 <div class="col-sm-2">
                     <h5>Ma'lumot</h5>
                     <ul>
-                        <li><a href="#"></a></li>
-                        <li><a href="#"></a></li>
-                        <li><a href="#"></a></li>
+                        <li><a href="#"> Telefon raqamlarimiz: </a></li>
+                        <li><a href="#" style="color:rgb(255, 76, 76)">2249538 , 2249539 </a></li> 
                     </ul>
                 </div>
                 <div class="col-sm-3">

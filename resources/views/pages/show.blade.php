@@ -30,7 +30,7 @@
                   <hr>
         
                   <!-- Post Content -->
-                  <p class="lead">{{$post->content}}</p>
+                  <p class="lead">{!!$post->content!!}</p>
          
                   <hr>
         @auth

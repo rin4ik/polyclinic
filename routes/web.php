@@ -32,12 +32,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('/kategoriyalar/{post}/izoxlar/{comment}', 'PostCommentController@delete');
     Route::post('/kategoriyalar/{post}/izoxlar', 'PostCommentController@create');
 });
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin', ], function () {
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware'=>'admin' ], function () {
     Route::get('/', 'DashboardController@index');
     Route::resource('/categories', 'CategoriesController');
     Route::resource('/posts', 'PostsController');
-    Route::resource('/users', 'UsersController');
-    Route::get('/comments', 'CommentsController@index');
-    Route::get('/comments/toggle/{id}', 'CommentsController@toggle');
+    Route::resource('/users', 'UsersController'); 
     Route::delete('/comments/{comment}/destroy', 'CommentsController@destroy')->name('comments.destroy');
 });
