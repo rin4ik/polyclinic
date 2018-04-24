@@ -30,7 +30,7 @@
             </h3>
             <span    style=" margin:20px 0;color:black ">  Muallif:  <a href="/sahifa"> {{$post->user->name}}</a></span>
             <span style="color:orange;float:right;  ">{{$post->created_at}}</span>
-              <p style="padding-top:20px">{{str_limit($post->content,545)}}</p>
+              <p style="padding-top:20px">{!! str_limit($post->content,545) !!}</p>
               <div class="news-categories" style="float:right">
                     <li><a  href="{{route('category.show',$post->category)}}"><i class="fa fa-angle-right"></i> {{optional($post->category)->title}}</a></li>
             </div> 

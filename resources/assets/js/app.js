@@ -27,3 +27,6 @@ Vue.use(VModal);
 const app = new Vue({
     el: '#app'
 });
+const my = new Vue({
+    el: '#my'
+});

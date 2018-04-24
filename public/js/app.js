@@ -30404,6 +30404,9 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_js_modal___default.a);
 var app = new Vue({
     el: '#app'
 });
+var my = new Vue({
+    el: '#my'
+});
 
 /***/ }),
 /* 139 */
