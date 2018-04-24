@@ -37,4 +37,29 @@ class User extends Authenticatable
     {
         return $this->morphMany(Comment::class, 'commentable')->where('reply_id', null);
     }
+    public static function add($fields)
+    {
+        $user = new static;
+        $user->fill($fields);
+        $user->password = \Hash::make($fields['password']);
+        $user->save();
+        return $user;
+    }
+
+    public static function edit($fields)
+    {
+        $user = new static;
+        $user->fill($fields);
+        $user->password = bcrypt($fields['password']);
+        $user->save();
+    }
+
+    public function remove()
+    {
+        if ($this->avatar != null) {
+            Storage::delete('uploads/' . $this->avatar);
+        }
+        $this->delete();
+    }
+
 }

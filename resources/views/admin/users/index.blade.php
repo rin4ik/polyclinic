@@ -4,17 +4,7 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        Управления пользователями
-        <small>АДМИНКА</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Examples</a></li>
-        <li class="active">Blank page</li>
-      </ol>
-    </section>
+   
 
     <!-- Main content -->
     <section class="content">
@@ -26,9 +16,7 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <div class="form-group">
-                <a href="/admin/users/create" class="btn btn-success">Добавить</a>
-              </div>
+           
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
@@ -45,9 +33,9 @@
                   <td>{{$user->id}}</td>
                   <td>{{$user->name}}</td>
                   <td>{{$user->email}}</td>
-                  <td>{{$user->is_admin}}</td>
+                  <td>{{$user->is_admin? 'xa admin' : 'yoq admin emas'}}</td>
                   
-                  <td><a href="{{route('users.edit',$user)}}" class="fa fa-pencil"></a>
+                  <td> 
                     <form action="{{route('users.destroy',$user)}}" method="POST">
                             {{ csrf_field() }} {{ method_field('DELETE') }}
                          <button onclick="return confirm('Вы уверены?')" type="submit" class="delete">

@@ -9,15 +9,17 @@
 
                 <div class="col-md-8 col-sm-7   text-align-right">
                     <span class="phone-icon">
-                        <i class="fa fa-phone"></i> 2263708, 2261897</span>
+                        <i class="fa fa-phone"></i> 2249539, 2249538</span>
                     <span class="date-icon">
-                        <i class="fa fa-calendar-plus-o"></i>08:00 - 19:00</span>
-                    <span class="email-icon">
-                        <i class="fa fa-envelope-o"></i>
-                        <a href="#">poliklinika@company.com</a>
+                        <i class="fa fa-calendar-plus-o"></i>08:00 - 20:00</span>
+                    <span class="email-icon"> 
+                        <a href="https://t.me/poliklinika5">  <i class="fa fa-telegram"></i>Telegram
+                          
+
+                        </a>
                     </span>
                     <span class="address-icon">
-                        <i class="fa fa-address-card-o"></i>"А.Навоий" кўчаси, №56 уй</span>
+                        <i class="fa fa-address-card-o"></i>"Yuksalish" ko'chasi, №63 uy</span>
                 </div>
 
             </div>

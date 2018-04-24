@@ -3,18 +3,7 @@
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        Blank page
-        <small>it all starts here</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Examples</a></li>
-        <li class="active">Blank page</li>
-      </ol>
-    </section>
+ 
 
     <!-- Main content -->
     <section class="content">
@@ -27,7 +16,7 @@
             <!-- /.box-header -->
             <div class="box-body">
               <div class="form-group">
-                <a href="/admin/posts/create" class="btn btn-success">Добавить</a>
+                <a href="/admin/posts/create" class="btn btn-primary">Добавить</a>
               </div>
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
