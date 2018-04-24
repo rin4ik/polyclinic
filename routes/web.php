@@ -1,5 +1,7 @@
 <?php
 
+use App\Post;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,11 +31,13 @@ Route::get('/mahalla', function () {
     return view('pages.mahalla');
 })->name('employee');
 Route::get('/fotolar', function () {
-    return view('pages.foto');
-})->name('employee');
+    $post = Post::all()->pluck('image');
+
+    return view('pages.foto', compact('post'));
+});
 Route::get('/aloqa', function () {
     return view('pages.contact');
-})->name('employee');
+});
 Route::group(['middleware' => ['auth']], function () {
     Route::delete('/kategoriyalar/{post}/izoxlar/{comment}', 'PostCommentController@delete');
     Route::post('/kategoriyalar/{post}/izoxlar', 'PostCommentController@create');
