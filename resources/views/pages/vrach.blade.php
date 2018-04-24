@@ -11,7 +11,34 @@
           
           <p style="margin-bottom:15px">
           
-            <p>2014 йил 26-ноябрдан:</p> <p><strong>Фарғона шахар 5-сонли оилавий поликлиника бош врачи</strong></p> <p><strong>Туғилган йили:&nbsp;</strong> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 05.08.1971&nbsp; &nbsp;</p> <p><strong>Туғилган жойи:</strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Фарғона вилояти, Фарғона шаҳри</p> <p><strong>Миллати:&nbsp;</strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;ўзбек</p> <p><strong>Партиявийлиги:&nbsp; </strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;партиясиз</p> <p>&nbsp;</p> <p><strong>Маълумоти:&nbsp;</strong> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;олий</p> <p><strong>Тамомлаган:</strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1993 й. Андижон давлат тиббиёт институти (кундузги)</p> <p><strong>Маълумоти бўйича мутахассислиги:&nbsp;</strong>&nbsp;даволаш иши</p> <p><strong>Илмий даражаси:</strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;йўқ&nbsp;&nbsp;</p> <p><strong>Илмий унвони:</strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; йўқ&nbsp; &nbsp;</p> <p>&nbsp;</p> <p><strong>Қайси чет тилларини билади:&nbsp;</strong>&nbsp;&nbsp;рус &nbsp;&nbsp;</p> <p><strong>Давлат мукофотлари билан тақдирланганми (қанақа):</strong>&nbsp;&nbsp;тақдирланмаган&nbsp;&nbsp;&nbsp;</p> <p>&nbsp;</p> <p><strong>Халқ депутатлари республика, вилоят, шаҳар ва туман Кенгаши депутатими ёки бошқа</strong></p> <p><strong>сайланадиган органларнинг аъзосими (тўлиқ кўрсатилиши лозим):&nbsp;</strong></p> <p>Фаргона шахар халқ депутатлари кенгаши депутати&nbsp;&nbsp;&nbsp;</p>
+            <p>2014 йил 26-ноябрдан: <strong>Фарғона шахар 5-сонли оилавий поликлиника бош врачи</strong></p>
+            
+            <p><strong>Туғилган йили: </strong>05.08.1971</p>
+            <p><strong>Телефон: </strong>244-99-13</p>
+            
+            <p><strong>Туғилган жойи:</strong> Фарғона вилояти, Фарғона шаҳри</p>
+            
+            <p><strong>Миллати: </strong>ўзбек</p>
+            
+            <p><strong>Партиявийлиги: </strong>партиясиз</p>
+            
+            <p><strong>Маълумоти: </strong>олий</p>
+            
+            <p><strong>Тамомлаган: </strong>1993 й. Андижон давлат тиббиёт институти (кундузги)</p>
+            
+            <p><strong>Маълумоти бўйича мутахассислиги: </strong>даволаш иши</p>
+            
+            <p><strong>Илмий даражаси: </strong>йўқ </p>
+            
+            <p><strong>Илмий унвони: </strong>йўқ   </p>
+            
+            <p><strong>Қайси чет тилларини билади: </strong>рус  </p>
+            
+            <p><strong>Давлат мукофотлари билан тақдирланганми (қанақа):</strong> тақдирланмаган </p>
+            
+            <p><strong>Халқ депутатлари республика, вилоят, шаҳар ва туман Кенгаши депутатими ёки бошқа</strong></p>
+            
+            <p><strong>сайланадиган органларнинг аъзосими (тўлиқ кўрсатилиши лозим): </strong>Фаргона шахар халқ депутатлари кенгаши депутати </p>
           </p>
                           @auth
                         

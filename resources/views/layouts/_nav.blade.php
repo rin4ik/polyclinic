@@ -40,7 +40,7 @@
                                     <a class="nav-link" href="/xodimlar">XODIMLAR</a>
                                 </li >
                                 <li  class="nav-item">
-                                    <a class="nav-link" href="services.html">FOTO</a>
+                                    <a class="nav-link" href="/fotolar">FOTO</a>
                                 </li>
                                 <li  class="nav-item btn-group">
                                             <span class="nav-link dropdown-toggle"   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor:pointer;">KATEGORIYALAR</span>
@@ -53,7 +53,7 @@
                                 </li>
                                 
                                 <li  class="nav-item">
-                                    <a class="nav-link" href="contact.html">MAHALLA</a>
+                                    <a class="nav-link" href="/mahalla">MAHALLA</a>
                                 </li>
                                 <li  class="nav-item">
                                     <a class="nav-link" href="{{route('vrach')}}">BOSH VRACH</a>
