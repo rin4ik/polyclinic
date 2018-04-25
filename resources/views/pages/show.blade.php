@@ -57,7 +57,7 @@
            </div>   --}}
         @else
         <div class="text-center mt-4 mb-2">
-                <button class="btn btn-danger">Iltimos izox qoldirish uchun saytga kiring
+                <button class="btn btn-danger"><a href="/login" style="color:white">Iltimos izox qoldirish uchun saytga kiring</a>
                     <i class="fa fa-sign-in ml-2"></i>
                 </button>
             </div>
