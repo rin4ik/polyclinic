@@ -31,7 +31,7 @@ Route::get('/mahalla', function () {
     return view('pages.mahalla');
 })->name('employee');
 Route::get('/fotolar', function () {
-    $post = Post::all()->pluck('image');
+    $post = Post::where('slug', '!=', 'vrach')->get();
 
     return view('pages.foto', compact('post'));
 });
