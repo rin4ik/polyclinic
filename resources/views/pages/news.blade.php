@@ -15,7 +15,7 @@
     
          
       <!-- Card --> 
-    @forelse($posts->take(5) as $post) 
+    @forelse($posts as $post) 
        
  
           <!-- Project One -->
