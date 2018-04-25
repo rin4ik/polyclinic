@@ -10,6 +10,7 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
         <!-- Font Awesome -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- Bootstrap core CSS -->
@@ -104,14 +105,27 @@
         </div>
                    <script src="{{asset('js/app.js')}}"></script> 
      <!-- JQuery -->
-     <script>
-            $(document).ready( function () {
-                $('#table_id').DataTable();
-            } );
-     </script>
+
      
 <!-- JQuery -->
 <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
+
+
+<script>
+    $(document).ready( function () {
+        $('#table_id').DataTable();
+    } );
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+
+        event.preventDefault();
+        $(this).ekkoLightbox({  
+            loadingMessage:true,
+        
+        });
+    });
+  
+</script>
         </body>
         
         </html>
