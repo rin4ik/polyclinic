@@ -50,6 +50,7 @@
                 </tfoot>
               </table>
             </div>
+            {{$posts->links()}}
             <!-- /.box-body -->
           </div>
       <!-- /.box -->

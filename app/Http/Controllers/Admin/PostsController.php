@@ -16,7 +16,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $posts = Post::with('category')->where('slug', '!=', 'vrach')->get();
+        $posts = Post::with('category')->where('slug', '!=', 'vrach')->paginate(10);
         return view('admin.posts.index', compact('posts'));
     }
 

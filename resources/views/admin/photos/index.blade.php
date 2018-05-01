@@ -37,11 +37,11 @@
                         </form>
                         </tr>
                     @endforeach
-                </tfoot>
+                </tbody> 
               </table>
             </div> 
           </div> 
-
+          {{$photos->links()}}
     </section>
     <!-- /.content -->
   </div>
