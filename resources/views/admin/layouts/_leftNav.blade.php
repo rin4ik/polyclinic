@@ -25,7 +25,7 @@
             </li>
             <li><a href="/admin/posts"><i class="fa fa-sticky-note-o"></i> <span>Yangiliklar</span></a></li>
             <li><a href="/admin/categories"><i class="fa fa-list-ul"></i> <span>Kategoriyalar</span></a></li>
-             
+            <li><a href="/admin/photos"><i class="fa fa-photo"></i> <span>Rasimlar</span></a></li>
             <li><a href="/admin/users"><i class="fa fa-users"></i> <span>Foydalanuvchilar</span></a></li>
             
           </ul>

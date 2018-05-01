@@ -1,6 +1,7 @@
 <?php
 
 use App\Post;
+use App\Photo;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,9 +32,9 @@ Route::get('/mahalla', function () {
     return view('pages.mahalla');
 })->name('employee');
 Route::get('/fotolar', function () {
-    $post = Post::where('slug', '!=', 'vrach')->get();
+    $photos = Photo::all();
 
-    return view('pages.foto', compact('post'));
+    return view('pages.foto', compact('photos'));
 });
 Route::get('/aloqa', function () {
     return view('pages.contact');
@@ -45,6 +46,7 @@ Route::group(['middleware' => ['auth']], function () {
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'admin'], function () {
     Route::get('/', 'DashboardController@index');
     Route::resource('/categories', 'CategoriesController');
+    Route::resource('/photos', 'PhotoController');
     Route::resource('/posts', 'PostsController');
     Route::resource('/users', 'UsersController');
     Route::delete('/comments/{comment}/destroy', 'CommentsController@destroy')->name('comments.destroy');
