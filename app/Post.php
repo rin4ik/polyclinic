@@ -79,7 +79,7 @@ class Post extends Model
         $path = public_path() . '/uploads/' . $fileId;
     
         $fileName =$fileId . '.png';
-        Image::make($path)->encode('png')->save();
+        Image::make($path)->encode('png')->resize(750,450)->save();
        
 
         if (Storage::disk('s3')->put($fileName, fopen($path, 'r+'))) {

@@ -25,7 +25,7 @@ class Photo extends Model
         $path = public_path() . '/uploads/' . $fileId;
 
         $fileName = $fileId . '.png';
-        Image::make($path)->encode('png')->save();
+        Image::make($path)->encode('png')->resize(850, 530)->save();
 
         if (Storage::disk('s3')->put($fileName, fopen($path, 'r+'))) {
             \File::delete($path);
