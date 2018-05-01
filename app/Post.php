@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Image;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 use Cviebrock\EloquentSluggable\Sluggable;
@@ -64,31 +65,30 @@ class Post extends Model
         }
         return 'Kategoriyasi yoq';
     }
-    public function removeImage()
-    {
-        if ($this->image != null) {
-            Storage::delete('uploads/' . $this->image);
-        }
-    }
+    
     public function uploadImage($image)
     {
         if ($image == null) {
             return;
-        }
-        $this->removeImage();
-        $filename = str_random(10) . '.' . $image->extension();
-     
+        } 
+        $fileId = uniqid(true);
         $image->move(
-            public_path() . '/uploads',
-            $filename);
-        $this->image = $filename;
+                public_path() . '/uploads/',
+             $fileId
+        );
+        $path = public_path() . '/uploads/' . $fileId;
+    
+        $fileName =$fileId . '.png';
+        Image::make($path)->encode('png')->save();
+       
+
+        if (Storage::disk('s3')->put($fileName, fopen($path, 'r+'))) {
+            \File::delete($path);
+        } 
+        $this->image = $fileName;
         $this->save();
-    }
-    public function remove()
-    {
-        $this->removeImage();
-        $this->delete();
-    }
+        
+    } 
     public function setCategory($id)
     {
         if ($id == null) {
@@ -113,6 +113,7 @@ class Post extends Model
         if ($this->image == null) {
             return '/images/noimage.jpg';
         }
-        return '/uploads/' . $this->image;
+        return config('poliklinika.buckets.images') . '/' .  $this->image;
+  
     }
 }
