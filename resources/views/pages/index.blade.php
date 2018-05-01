@@ -14,7 +14,7 @@
             </li> 
           </ol>
       <!-- Card --> 
-    @foreach($posts->take(5) as $post) 
+    @forelse($posts->take(5) as $post) 
        
  
           <!-- Project One -->
@@ -44,8 +44,9 @@
        
       @endif
          
-       
-    @endforeach
+       @empty
+       <h2>Hozircha yangiliklar yo'q</h2>
+    @endforelse
     
     </div>    
     <!-- Card --> 
