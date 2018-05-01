@@ -15,7 +15,7 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
+        $categories = Category::paginate(10);
         return view('admin.categories.index', compact('categories'));
     }
 
@@ -76,7 +76,7 @@ class CategoriesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Category $category)
-    { 
+    {
         $category->update(request()->validate([
             'title' => 'required',
         ]));

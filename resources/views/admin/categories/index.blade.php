@@ -55,10 +55,10 @@
                     
                 </tr>
                 @endforeach
-                
+              
             </tfoot>
               </table>
-            </div>
+            </div>  {{$categories->links()}}
             <!-- /.box-body -->
           </div>
       <!-- /.box -->
