@@ -21,7 +21,7 @@
           <div id="all" class="row">
             <div class="col-md-7">
               <a href="{{route('post.show',['category'=>$post->category->slug,'post'=>$post])}}">
-                <img style="height:450px; "  class="img-fluid rounded mb-3 mb-md-0" src="{{$post->getImage()}}" alt="">
+                <img class="img-fluid rounded mb-3 mb-md-0" src="{{$post->getImage()}}" alt="">
               </a>
             </div>
             <div class="col-md-5">

@@ -25,7 +25,7 @@
             </div>
         </div>
     </header>
-   <img src="{{asset('images/logo.jpg')}}" style="width:100%; height:210px; " alt="">
+   <img src="{{asset('images/logo.jpg')}}" style="width:100%;   " alt="">
      <!-- Navigation -->
      <nav class="navbar navbar-expand-lg navbar-dark special-color-dark lighten-1" style="padding: 5px 12px">
             <div class="container">
