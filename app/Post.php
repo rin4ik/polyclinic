@@ -102,7 +102,7 @@ class Post extends Model
     {
         $post = new static;
         $post->fill($fields);
-        $post->user_id = 1;
+        $post->user_id = auth()->id();
         $post->category_id = $fields['category_id'];
         $post->save();
         return $post;

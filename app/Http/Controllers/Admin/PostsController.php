@@ -79,7 +79,7 @@ class PostsController extends Controller
             'category_id' => 'required',
             'image' => 'nullable|image'
         ]));
-
+        $post->user_id = auth()->id();
         $post->uploadImage($request->file('image'));
         $post->setCategory($request->get('category_id'));
         return redirect()->route('posts.index')->with('flash', 'Yangilik yangilandi!');
