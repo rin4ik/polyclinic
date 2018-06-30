@@ -1,7 +1,11 @@
 <!--Carousel Wrapper-->
-<div class="col-md-12"  >
-
-
+<div class="container">
+    <carousel>
+        <img class="d-block w-100" src="{{asset('images/1.jpg')}}" alt="First slide">
+        <img class="d-block w-100" src="{{asset('images/2.jpg')}}" alt="First slide">
+        <img class="d-block w-100" src="{{asset('images/pol5.jpg')}}" alt="First slide">
+    </carousel>
+    {{--  
 <div id="carousel-example-1z" style="box-shadow:5px 5px 5px #9fa0a1" class="carousel slide carousel-fade" data-ride="carousel">
         <!--Indicators-->
         <ol class="carousel-indicators">
@@ -14,17 +18,17 @@
         <div class="carousel-inner" role="listbox">
             <!--First slide-->
             <div class="carousel-item active">
-                <img class="d-block w-100" style="height:450px" src="{{asset('images/1.jpg')}}" alt="First slide">
+                <img class="d-block w-100" src="{{asset('images/1.jpg')}}" alt="First slide">
             </div>
             <!--/First slide-->
             <!--Second slide-->
             <div class="carousel-item">
-                <img class="d-block w-100" style="height:450px" src="{{asset('images/2.jpg')}}" alt="Second slide">
+                <img class="d-block w-100" src="{{asset('images/2.jpg')}}" alt="Second slide">
             </div>
             <!--/Second slide-->
             <!--Third slide-->
             <div class="carousel-item">
-                <img class="d-block w-100" style="height:450px" src="{{asset('images/pol5.jpg')}}" alt="Third slide">
+                <img class="d-block w-100" src="{{asset('images/pol5.jpg')}}" alt="Third slide">
             </div>
             <!--/Third slide-->
         </div>
@@ -39,5 +43,5 @@
             <span class="sr-only">Next</span>
         </a>
         <!--/.Controls-->
-    </div>
+    </div>  --}}
     <!--/.Carousel Wrapper--></div>

@@ -22,6 +22,7 @@ window.flash = function(message, level = 'success') {
      */
 
 Vue.component('flash', require('./components/Flash.vue'));
+Vue.component('carousel', require('./components/Carousel.vue'));
 Vue.component('post-comments', require('./components/PostComments.vue'));
 Vue.use(VModal);
 const app = new Vue({
