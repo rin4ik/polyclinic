@@ -974,7 +974,11 @@ footer a:hover {
 /*---------------------------------------
      RESPONSIVE STYLES              
   -----------------------------------------*/
-
+@media only screen and (min-width: 768px) {
+    .element {
+        padding: 5px 5px !important
+    }
+}
 @media only screen and (max-width: 1200px) {
     h1 {
         font-size: 4em;
